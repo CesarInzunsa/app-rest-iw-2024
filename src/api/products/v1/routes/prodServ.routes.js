@@ -4,8 +4,8 @@ import * as prodServController from '../controllers/prodserv.controller';
 
 const router = Router();
 
-router.get('/', prodServController.getProdServList);
-router.get('/:id', prodServController.getProdServItem);
+router.get('/', prodServController.getProdServAll);
+router.get('/:id', prodServController.getProdServIOne);
 router.put('/:id', prodServController.putProdServItem);
 router.delete('/:id', prodServController.deleteProdServItem);
 router.post('/', prodServController.postProdServItem);

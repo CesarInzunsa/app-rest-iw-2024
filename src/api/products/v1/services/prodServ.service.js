@@ -3,7 +3,7 @@ import ProdServ from '../models/ProdServ';
 import boom from '@hapi/boom';
 
 //FIC: GET PRODUCTS AND SERVICES LIST
-export const getProdServList = async () => {
+export const getProdServAll = async () => {
     let prodServList;
     try {
         prodServList = await ProdServ.find();
@@ -15,7 +15,7 @@ export const getProdServList = async () => {
 };
 
 //FIC: GET PRODUCT OR SERVICE BY ID
-export const getProdServItem = async (id, keyType) => {
+export const getProdServOne = async (id, keyType) => {
     let prodServItem;
 
     try {

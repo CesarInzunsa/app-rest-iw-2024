@@ -4,13 +4,13 @@ import boom from '@hapi/boom';
 //FIC: API GET
 //----------------------------------------
 //FIC: Todos los Productos/Servicios.
-export const getProdServList = async (req, res, next) => {
+export const getProdServAll = async (req, res, next) => {
     try {
-        const prodServList = await ProdServServices.getProdServList();
-        if (!prodServList) {
+        const prodServAll = await ProdServServices.getProdServAll();
+        if (!prodServAll) {
             throw boom.notFound('No se encontraron productos/servicios registrados.');
-        } else if (prodServList) {
-            res.status(200).json(prodServList);
+        } else if (prodServAll) {
+            res.status(200).json(prodServAll);
         }
 
     } catch (error) {
@@ -19,7 +19,7 @@ export const getProdServList = async (req, res, next) => {
 };
 
 //FIC: Solo un Producto/Servicio.
-export const getProdServItem = async (req, res, next) => {
+export const getProdServIOne = async (req, res, next) => {
     try {
         //FIC: obtener parametro id mediante la
         //desestructuracion de objetos
@@ -28,11 +28,11 @@ export const getProdServItem = async (req, res, next) => {
         //clase/objeto.
         //const idProdServ = req.params.id;
         const keyType = req.query.keyType || 'OK';
-        const prodServItem = await ProdServServices.getProdServItem(id, keyType);
-        if (!prodServItem) {
+        const prodServOne = await ProdServServices.getProdServOne(id, keyType);
+        if (!prodServOne) {
             throw boom.notFound('No se encontraron productos/servicios registrados.');
-        } else if (prodServItem) {
-            res.status(200).json(prodServItem);
+        } else if (prodServOne) {
+            res.status(200).json(prodServOne);
         }
     } catch (error) {
         next(error);
