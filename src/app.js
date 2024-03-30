@@ -5,6 +5,7 @@ import cors from 'cors';
 
 //FIC: imports Routes
 import routeAPIV1ProdServ from './api/v1/routes/index';
+import routesOrdersV2 from './api/v2/routes/index';
 
 //FIC: imports Middlewares
 
@@ -41,6 +42,7 @@ app.get('/DrFIC', (req, res) => {
 
 // Routes
 routeAPIV1ProdServ(app);
+routesOrdersV2(app);
 // Import Routes
 // Swagger Docs
 // Middleware para el manejo de errores
